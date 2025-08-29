@@ -1,0 +1,6 @@
+# Ignore environment variable file
+.env
+# Ignore generated table
+table.html
+# Ignore Python cache files
+__pycache__/
