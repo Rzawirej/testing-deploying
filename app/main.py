@@ -12,6 +12,7 @@ from app.helpers import calculate_returned_value
 app = FastAPI()
 DB_FILE = "data.db"
 
+
 # --- Database setup ---
 def init_db():
     conn = sqlite3.connect(DB_FILE)
@@ -103,7 +104,7 @@ def counter():
     return {"counter": count}
 
 # --- Run ---
+init_db()
+store_html()
 if __name__ == "__main__":
-    init_db()
-    store_html()  # generate once at startup
     uvicorn.run(app, host="0.0.0.0", port=8000)
